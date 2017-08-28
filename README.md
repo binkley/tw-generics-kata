@@ -1,1 +1,1 @@
-# Generics Kata for Java
+# Kata for Java Generics
