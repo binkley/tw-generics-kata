@@ -1,5 +1,7 @@
 package kata;
 
+import kata.dollar.DollarCurrency;
+import kata.rupee.RupeeCurrency;
 import org.junit.Test;
 
 import static kata.Currency.getCurrency;

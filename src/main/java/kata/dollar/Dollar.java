@@ -1,4 +1,4 @@
-package kata;
+package kata.dollar;
 
 import lombok.Data;
 

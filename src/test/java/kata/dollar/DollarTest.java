@@ -1,13 +1,13 @@
-package kata;
+package kata.dollar;
 
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-public final class RupeeTest {
+public final class DollarTest {
     @Test
     public void shouldDisplay() {
-        assertThat(new Rupee(55).toString(), is("₹55"));
+        assertThat(new Dollar(105).toString(), is("$1.05"));
     }
 }

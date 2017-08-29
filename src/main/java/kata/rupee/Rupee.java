@@ -1,4 +1,4 @@
-package kata;
+package kata.rupee;
 
 import lombok.Data;
 

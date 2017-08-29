@@ -1,5 +1,8 @@
 package kata;
 
+import kata.dollar.DollarCurrency;
+import kata.rupee.RupeeCurrency;
+
 public interface Currency {
     static Currency getCurrency(final String symbol) {
         switch (symbol) {
