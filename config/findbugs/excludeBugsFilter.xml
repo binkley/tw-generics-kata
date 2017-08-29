@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<FindBugsFilter>
+    <Match>
+        <Bug category="EXPERIMENTAL"/>
+    </Match>
+</FindBugsFilter>
