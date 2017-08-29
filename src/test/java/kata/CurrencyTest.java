@@ -1,27 +1,26 @@
 package kata;
 
-import kata.dollar.DollarCurrency;
-import kata.rupee.RupeeCurrency;
+import kata.dollar.Dollar;
+import kata.rupee.Rupee;
 import org.junit.Test;
 
 import static kata.Currency.getCurrency;
-import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public final class CurrencyTest {
     @Test
     public void shouldGetDollar() {
-        assertThat(getCurrency("USD"), is(instanceOf(DollarCurrency.class)));
+        assertThat(getCurrency("USD", 1), is(new Dollar(1)));
     }
 
     @Test
     public void shouldGetRupee() {
-        assertThat(getCurrency("RUP"), is(instanceOf(RupeeCurrency.class)));
+        assertThat(getCurrency("RUP", 1), is(new Rupee(1)));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldComplainAtUnsupportedSymbol() {
-        getCurrency("???");
+        getCurrency("???", 1);
     }
 }

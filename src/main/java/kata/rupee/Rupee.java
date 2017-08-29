@@ -1,11 +1,12 @@
 package kata.rupee;
 
+import kata.Currency;
 import lombok.Data;
 
 import static java.lang.String.format;
 
 @Data
-public final class Rupee {
+public final class Rupee implements Currency {
     private final long units;
 
     public long rupees() {
