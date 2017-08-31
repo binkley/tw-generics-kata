@@ -2,23 +2,24 @@
 
 ## Goal
 
-Write a conversion class to change currencies, like at the foreign currency desk of an airport.  Avoid hard-coding any
-particular currency class in the converter.
+Write a `ExchangeDesk` class to change currencies, like the foreign currency desk of an airport.  Avoid hard-coding
+any particular currency class in the converter.
+
+The currency conversion call should look like:
+
+```java
+final Rupee rupees = new Rupees(1_000);
+final Dollar dollar = exchangeDesk.convert(rupees, Dollar.class); 
+```
 
 Remember: Your "exchange desk" will need to know exchange rates (try https://www.google.com/search?q=USD+to+INR for
 example rates), but *not* look them up in real-time!
 
-Assume the current dollar to rupee rate is today's market rate (ask Google, "dollar to rupee").
-
 ## Rules for success
 
+* Keep test coverage at 100%
 * No type casting (exception for casting to a generic parameter, if required)
-* I can still access specific methods of generic subtypes, example:
-   ```java
-   final Dollar dollar = genericThing<Dollar>.someMethod();
-   System.out.println(dollar.cents());
-   final Currency alsoDollar = genericThing<Dollar>.someMethod(); // Also compiles
-   ```
+* Look up conversions with currency symbols (e.g., "INR", or Indian Rupee), or class tokens (e.g., `Dollar.class`)
 
 ## Extra credit
 
