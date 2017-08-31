@@ -8,6 +8,7 @@ import static org.junit.Assert.assertThat;
 public final class RupeeTest {
     @Test
     public void shouldDisplay() {
-        assertThat(new Rupee(55).toString(), is("₹55"));
+        final int rupees = 55;
+        assertThat(new Rupee(rupees).toString(), is("₹55"));
     }
 }

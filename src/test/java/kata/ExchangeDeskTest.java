@@ -3,6 +3,11 @@ package kata;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.nullValue;
+import static org.junit.Assert.assertThat;
+
 public final class ExchangeDeskTest {
     private ExchangeDesk exchangeDesk;
 
@@ -13,5 +18,6 @@ public final class ExchangeDeskTest {
 
     @Test
     public void firstTest() {
+        assertThat(exchangeDesk, is(not(nullValue())));
     }
 }

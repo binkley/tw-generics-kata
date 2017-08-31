@@ -11,9 +11,7 @@ repositories {
 
 dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
-    compileOnly group: 'org.jetbrains', name: 'annotations', version: '15.0'
     testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
-    testCompileOnly group: 'org.jetbrains', name: 'annotations', version: '15.0'
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
 }
@@ -24,8 +22,13 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
 tasks.withType(FindBugs) {
-    excludeFilter = rootProject.file('config/findbugs/excludeBugsFilter.xml')
     reports {
         html.enabled true
         xml.enabled false
@@ -34,24 +37,6 @@ tasks.withType(FindBugs) {
 
 clean {
     delete 'out'
-}
-
-test {
-    testLogging {
-        exceptionFormat = 'full'
-    }
-}
-
-checkstyleMain {
-    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
-}
-
-checkstyleTest {
-    configFile = rootProject.file('config/checkstyle/checkstyle-test.xml')
-}
-
-findbugs {
-    sourceSets = [sourceSets.main]
 }
 
 jacoco {
