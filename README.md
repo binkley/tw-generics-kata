@@ -10,6 +10,12 @@ Assume the current dollar to rupee rate is today's market rate (ask Google, "dol
 ## Rules for success
 
 * No type casting (exception for casting to a generic parameter, if required)
+* I can still access specific methods of generic subtypes, example:
+   ```java
+   final Dollar dollar = genericThing<Dollar>.someMethod();
+   System.out.println(dollar.cents());
+   final Currency alsoDollar = genericThing<Dollar>.someMethod(); // Also compiles
+   ```
 
 ## Extra credit
 
