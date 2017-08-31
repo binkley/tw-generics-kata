@@ -7,7 +7,7 @@ import static java.lang.String.format;
 
 @Data
 public final class Rupee implements Currency {
-    public static final String SYMBOL = "RUP";
+    public static final String SYMBOL = "INR";
     private final long units;
 
     public long rupees() {

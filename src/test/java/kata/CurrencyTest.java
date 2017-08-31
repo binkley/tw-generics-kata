@@ -16,7 +16,7 @@ public final class CurrencyTest {
 
     @Test
     public void shouldGetRupee() {
-        assertThat(getCurrency("RUP", 1), is(new Rupee(1)));
+        assertThat(getCurrency("INR", 1), is(new Rupee(1)));
     }
 
     @Test(expected = IllegalArgumentException.class)

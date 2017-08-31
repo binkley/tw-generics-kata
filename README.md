@@ -2,8 +2,11 @@
 
 ## Goal
 
-Write a conversion class to change currencies, like at the foreign currency desk at an airport.  Avoid hard-coding any
+Write a conversion class to change currencies, like at the foreign currency desk of an airport.  Avoid hard-coding any
 particular currency class in the converter.
+
+Remember: Your "exchange desk" will need to know exchange rates (try https://www.google.com/search?q=USD+to+INR for
+example rates), but *not* look them up in real-time!
 
 Assume the current dollar to rupee rate is today's market rate (ask Google, "dollar to rupee").
 
