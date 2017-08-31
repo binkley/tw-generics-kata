@@ -19,7 +19,7 @@ example rates), but *not* look them up in real-time!
 
 * Keep test coverage at 100%
 * No type casting (exception for casting to a generic parameter, if required)
-* Look up conversions with currency symbols (e.g., "INR", or Indian Rupee), or class tokens (e.g., `Dollar.class`)
+* Look up conversions with class tokens (e.g., `Dollar.class`)
 
 ## Extra credit
 
