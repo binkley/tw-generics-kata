@@ -30,6 +30,13 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 * No type casting (exception for casting to a generic parameter, if required)
 * No use of reflection: use lambdas and/or method references
 
+## Tips
+
+* Fork the kata (https://github.com/binkley/tw-generics-kata) to your github account; work from there, pushing your
+  local changes back to your fork
+* Use the "ABC" pattern to your advantage: `git add . && ./gradlew test && git commit` (or amend)
+* Commit every time the tests pass; save `./gradlew clean build` for pushing your commit
+
 ## Extra credit
 
 * Refer to currencies by string ("INR", "USD") rather than class token (`INR.class`, `USD.class`)
