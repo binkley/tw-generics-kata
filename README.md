@@ -3,6 +3,12 @@
 Level: Intermediate  
 Timebox: 1hr
 
+This kata helps you be more comfortable with Java
+[_generics_](https://docs.oracle.com/javase/tutorial/java/generics/index.html) beyond `List<String>`.  You will practice
+writing generics classes and methods, and not just using them.  You will also practice
+[_lambda expressions_](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) and
+[_method references_](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html).
+
 ## Goal
 
 Write a `ExchangeDesk` class to change currencies, like the foreign currency desk of an airport.  Avoid hard-coding
