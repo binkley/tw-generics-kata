@@ -13,7 +13,11 @@ final Dollar dollar = exchangeDesk.convert(rupees, Dollar.class);
 ```
 
 Remember: Your "exchange desk" will need to know exchange rates (try https://www.google.com/search?q=USD+to+INR for
-example rates), but *not* look them up in real-time!
+example rates), but *not* look them up in real-time&mdash;assume static rates for the kata:
+
+```java
+exchangeDesk.addRate(Rupee.class, Dollar.class, 0.016d);
+```
 
 ## Rules for success
 
