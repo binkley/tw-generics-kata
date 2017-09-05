@@ -1,5 +1,8 @@
 # Kata for Java Generics
 
+Level: Intermediate  
+Timebox: 1hr
+
 ## Goal
 
 Write a `ExchangeDesk` class to change currencies, like the foreign currency desk of an airport.  Avoid hard-coding
@@ -29,6 +32,7 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 
 ## Extra credit
 
+* Refer to currencies by string ("INR", "USD") rather than class tokens (`INR.class`, `USD.class`)
 * Use `ServiceLoader` from the JDK to find and use supported currencies.  You may find
   [META-INF/services generator](http://metainf-services.kohsuke.org/) helpful.
 * Use `Locale` and `NumberFormat` from the JDK to format currencies.  This is not related to generics, but introduces
