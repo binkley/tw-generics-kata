@@ -17,7 +17,7 @@ public final class ExchangeDeskTest {
     }
 
     @Test
-    public void firstTest_replaceMe() {
+    public void firstTestReplaceMe() {
         assertThat(exchangeDesk, is(not(nullValue())));
     }
 }
