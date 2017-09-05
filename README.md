@@ -29,5 +29,9 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 
 ## Extra credit
 
-Use `ServiceLoader` from the JDK to find and use supported currencies.  You may find
-[META-INF/services generator](http://metainf-services.kohsuke.org/) helpful.
+* Use `ServiceLoader` from the JDK to find and use supported currencies.  You may find
+  [META-INF/services generator](http://metainf-services.kohsuke.org/) helpful.
+* Use `Locale` and `NumberFormat` from the JDK to format currencies.  This is not related to generics, but introduces
+  you to more of the JDK.  You may find
+  [Using Predefined Formats (The Java&trade; Tutorials &gt; Internationalization &gt; Formatting)](https://docs.oracle.com/javase/tutorial/i18n/format/numberFormat.html)
+  helpful.  
