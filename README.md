@@ -12,8 +12,9 @@ final INR rupees = new INRs(1_000);
 final USD dollar = exchangeDesk.convert(rupees, USD.class); 
 ```
 
-Remember: Your "exchange desk" will need to know exchange rates (try https://www.google.com/search?q=USD+to+INR for
-example rates), but *not* look them up in real-time&mdash;assume static rates for the kata:
+Remember: Your "exchange desk" will need to know exchange rates (try
+[INR to USD](https://www.google.com/search?q=INR+to+USD) for example rates), but *not* look them up in
+real-time&mdash;assume static rates for the kata:
 
 ```java
 exchangeDesk.addRate(INR.class, USD.class, 0.016d);
@@ -27,4 +28,5 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 
 ## Extra credit
 
-* Use `ServiceLoader` from the JDK to find and use supported currencies
+Use `ServiceLoader` from the JDK to find and use supported currencies.  You may find
+[META-INF/services generator](http://metainf-services.kohsuke.org/) helpful.
