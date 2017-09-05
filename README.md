@@ -8,22 +8,22 @@ any particular currency class in the converter.
 The currency conversion call should look like:
 
 ```java
-final Rupee rupees = new Rupees(1_000);
-final Dollar dollar = exchangeDesk.convert(rupees, Dollar.class); 
+final INR rupees = new INRs(1_000);
+final USD dollar = exchangeDesk.convert(rupees, USD.class); 
 ```
 
 Remember: Your "exchange desk" will need to know exchange rates (try https://www.google.com/search?q=USD+to+INR for
 example rates), but *not* look them up in real-time&mdash;assume static rates for the kata:
 
 ```java
-exchangeDesk.addRate(Rupee.class, Dollar.class, 0.016d);
+exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 ```
 
 ## Rules for success
 
 * Keep test coverage at 100%
 * No type casting (exception for casting to a generic parameter, if required)
-* Look up conversions with class tokens (e.g., `Dollar.class`)
+* Look up conversions with class tokens (e.g., `USD.class`)
 
 ## Extra credit
 

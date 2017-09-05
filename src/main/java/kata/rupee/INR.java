@@ -6,7 +6,7 @@ import lombok.Data;
 import static java.lang.String.format;
 
 @Data
-public final class Rupee implements Currency {
+public final class INR implements Currency {
     private final long units;
 
     public long rupees() {
