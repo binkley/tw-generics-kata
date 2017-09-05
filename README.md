@@ -8,7 +8,7 @@ any particular currency class in the converter.
 The currency conversion call should look like:
 
 ```java
-final INR rupees = new INRs(1_000);
+final INR rupees = new INR(1_000);
 final USD dollar = exchangeDesk.convert(rupees, USD.class); 
 ```
 
