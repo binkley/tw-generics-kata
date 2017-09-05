@@ -25,6 +25,7 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 * Keep test coverage at 100%
 * No type casting (exception for casting to a generic parameter, if required)
 * Look up conversions with class tokens (e.g., `USD.class`)
+* No use of reflection: use lambdas and/or method references
 
 ## Extra credit
 
