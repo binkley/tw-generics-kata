@@ -6,7 +6,7 @@ Timebox: 1hr
 ## Goal
 
 Write a `ExchangeDesk` class to change currencies, like the foreign currency desk of an airport.  Avoid hard-coding
-any particular currency class in the converter.
+any particular currency class in the converter.  Preserve currency types in the conversion.
 
 The currency conversion call should look like:
 
@@ -26,8 +26,8 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 ## Rules for success
 
 * Keep test coverage at 100%
+* Keep clean code style
 * No type casting (exception for casting to a generic parameter, if required)
-* Look up conversions with class tokens (e.g., `USD.class`)
 * No use of reflection: use lambdas and/or method references
 
 ## Extra credit
