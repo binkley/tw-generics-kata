@@ -31,6 +31,7 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 
 ## Rules for success
 
+* Always TDD!  Start with a failing test (hint: use the above code in your test)
 * Keep test coverage at 100%
 * Keep clean code style
 * No type casting (exception for casting to a generic parameter, if required)
@@ -40,6 +41,7 @@ exchangeDesk.addRate(INR.class, USD.class, 0.016d);
 
 * Fork the kata (https://github.com/binkley/tw-generics-kata) to your github account; work from there, pushing your
   local changes back to your fork
+* Ensure your editor has annotation processing enabled for `javac`, and a Lombok plugin or support turned on
 * Use the "ABC" pattern to your advantage: `git add . && ./gradlew test && git commit` (or amend)
 * Commit every time the tests pass; save `./gradlew clean build` for pushing your commit
 
