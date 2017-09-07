@@ -14,6 +14,8 @@ practice writing generics classes and methods, and not just using them.  You wil
 Write a `ExchangeDesk` class to change currencies, like the foreign currency desk of an airport.  Avoid hard-coding
 any particular currency class in the converter.  Preserve currency types in the conversion.
 
+### Part 1
+
 The currency conversion call should look like:
 
 ```java
