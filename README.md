@@ -21,19 +21,29 @@ final INR rupees = new INR(1_000);
 final USD dollar = exchangeDesk.convert(rupees, USD.class); 
 ```
 
+So your goal is to change the type declarations in `convert` from specific currencies to general `Currency` references
+using generics.
+
+Hard-code the exchange rate for this part.
+
+### Part 2
+
 Remember: Your "exchange desk" will need to know exchange rates (try
 [INR to USD](https://www.google.com/search?q=INR+to+USD) for example rates), but *not* look them up in
 real-time&mdash;assume static rates for the kata:
 
 ```java
-exchangeDesk.addRate(INR.class, USD.class, 0.016d);
+exchangeDesk.addRate(USD.class, INR.class, 64.5d);
 ```
+
+Adding a rate for USD to INR should also add the corresponding rate for INR to USD.
 
 ## Rules for success
 
-* Always TDD!  Start with a failing test (hint: use the above code in your test)
+* Always start with a failing test (_hint_: use the above code in your test)
 * Keep test coverage at 100%
 * Keep clean code style
+* No compiler warnings
 * No type casting (exception for casting to a generic parameter, if required)
 * No use of reflection: use lambdas and/or method references
 
