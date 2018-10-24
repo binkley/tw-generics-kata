@@ -75,3 +75,7 @@ Each of these are suitable for follow-on katas:
 * [Java Generics cheat sheet](https://zeroturnaround.com/rebellabs/java-generics-cheat-sheet/)
 * [Using Java Generics to express variance of Collections and Functions](https://advancedweb.hu/2016/05/03/java_variance/)
 * [Java Generics FAQs](http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html)
+
+## Updates
+
+- 2018/10/24 - Refreshed Gradle, dependencies and tooling
