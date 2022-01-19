@@ -1,16 +1,17 @@
+import com.github.spotbugs.snom.SpotBugsTask
+
 buildscript {
     ext {
-        checkstyleVersion = '8.12'
-        jacocoVersion = '0.8.2'
-        lombokVersion = '1.18.2'
-        spotbugsVersion = '3.1.7'
+        hamcrestVersion = '2.2'
+        jacocoVersion = '0.8.7'
+        junitVersion = '5.8.2'
+        lombokVersion = '1.18.22'
+        spotbugsVersion = '4.5.3'
     }
 }
 
 plugins {
-    id 'build-dashboard'
-    id 'checkstyle'
-    id 'com.github.spotbugs' version '1.6.3'
+    id 'com.github.spotbugs' version '5.0.4'
     id 'jacoco'
     id 'java'
 }
@@ -21,19 +22,33 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
-    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok',
+            version: lombokVersion
+    compileOnly group: 'org.projectlombok', name: 'lombok',
+            version: lombokVersion
+    testCompileOnly group: 'org.projectlombok', name: 'lombok',
+            version: lombokVersion
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok',
+            version: lombokVersion
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-library',
+            version: hamcrestVersion
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',
+            version: junitVersion
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',
+            version: junitVersion
 }
 
 defaultTasks 'clean', 'build'
 
 tasks.withType(JavaCompile) {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
     options.compilerArgs += ['-Werror', '-Xlint:all', '-Xlint:-processing']
     options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 tasks.withType(Test) {
@@ -42,7 +57,7 @@ tasks.withType(Test) {
     }
 }
 
-tasks.withType(FindBugs) {
+tasks.withType(SpotBugsTask) {
     reports {
         html.enabled true
         xml.enabled false
@@ -73,7 +88,7 @@ spotbugs {
     toolVersion = spotbugsVersion
 }
 
-tasks.withType(com.github.spotbugs.SpotBugsTask) {
+tasks.withType(SpotBugsTask) {
     showProgress = false
 
     reports {
@@ -81,20 +96,6 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
         html.enabled true
     }
 }
-
-checkstyle {
-    toolVersion = checkstyleVersion
-}
-
-tasks.withType(Checkstyle) {
-    maxWarnings = 0
-
-    reports {
-        html.enabled = true
-        xml.enabled = false
-    }
-}
-
 
 check {
     dependsOn jacocoTestCoverageVerification

@@ -1,17 +1,17 @@
 package kata;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertThat;
 
 public final class ExchangeDeskTest {
     private ExchangeDesk exchangeDesk;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         exchangeDesk = new ExchangeDesk();
     }
