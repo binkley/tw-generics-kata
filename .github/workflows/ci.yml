@@ -1,0 +1,49 @@
+name: build
+
+on:
+  push:
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  build-with-gradle:
+    name: Builds and tests for Gradle under Batect
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@master
+
+      - name: Restore Batect caches
+        uses: actions/cache@master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Manage Batect telemetry
+        run: ./batect --permanently-enable-telemetry
+
+      - name: Restore Gradle caches
+        uses: actions/cache@master
+        env:
+          cache-name: gradle-cache
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{hashFiles('**/build.gradle') }}
+          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Build and test with Gradle under Batect
+        run: ./batect build
