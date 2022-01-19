@@ -30,12 +30,10 @@ dependencies {
             version: lombokVersion
     testAnnotationProcessor group: 'org.projectlombok', name: 'lombok',
             version: lombokVersion
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter',
+            version: junitVersion
     testImplementation group: 'org.hamcrest', name: 'hamcrest-library',
             version: hamcrestVersion
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',
-            version: junitVersion
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api',
-            version: junitVersion
 }
 
 defaultTasks 'clean', 'build'
